@@ -1,0 +1,69 @@
+/**
+ * App entry point — wires router, sidebar, and content rendering.
+ */
+
+import { initRouter, navigate } from './router.js';
+import { renderSidebar, highlightSection, updateProgress } from './ui/sidebar.js';
+import { updateBreadcrumb } from './ui/breadcrumb.js';
+import { renderSectionNav, setOnComplete } from './ui/sectionNav.js';
+import { setupModalClose } from './ui/modal.js';
+import { renderSection } from './content/sectionRenderer.js';
+import { renderLanding } from './content/landingRenderer.js';
+import { isSectionUnlocked, getResumeSectionId } from './progress/unlockManager.js';
+import { setCurrentSection, getCurrentSection } from './progress/progressStore.js';
+
+// Import activity/quiz/puzzle runners so they register their renderers
+import './activities/quizRunner.js';
+import './activities/puzzleRunner.js';
+
+// Initialize
+document.addEventListener('DOMContentLoaded', () => {
+  renderSidebar();
+  setupModalClose();
+
+  setOnComplete(() => {
+    updateProgress();
+  });
+
+  // Listen for section completion from activities/quizzes/puzzles
+  window.addEventListener('section-completed', () => {
+    updateProgress();
+    const current = window.location.hash.match(/(\w+)$/)?.[1];
+    if (current) renderSectionNav(current);
+  });
+
+  initRouter(async (sectionId) => {
+    if (!sectionId) {
+      // No section hash — show course landing page
+      highlightSection(null);
+      updateBreadcrumb(null);
+      const contentArea = document.getElementById('content-area');
+      contentArea.innerHTML = '';
+      const sectionNav = document.getElementById('section-nav');
+      sectionNav.innerHTML = '';
+      window.scrollTo(0, 0);
+      renderLanding(contentArea);
+      return;
+    }
+
+    // Guard: redirect if locked
+    if (!isSectionUnlocked(sectionId)) {
+      const resume = getResumeSectionId();
+      navigate(resume);
+      return;
+    }
+
+    // Update UI
+    highlightSection(sectionId);
+    updateBreadcrumb(sectionId);
+    setCurrentSection(sectionId);
+
+    // Render content
+    const contentArea = document.getElementById('content-area');
+    contentArea.innerHTML = '';
+    window.scrollTo(0, 0);
+
+    const result = await renderSection(sectionId, contentArea);
+    renderSectionNav(sectionId, result);
+  });
+});
