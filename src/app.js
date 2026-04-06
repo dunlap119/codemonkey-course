@@ -11,13 +11,13 @@ import { renderSection } from './content/sectionRenderer.js';
 import { renderLanding } from './content/landingRenderer.js';
 import { isSectionUnlocked, getResumeSectionId } from './progress/unlockManager.js';
 import { setCurrentSection, getCurrentSection } from './progress/progressStore.js';
+import { getStudentName, showNameEntry } from './ui/nameEntry.js';
 
 // Import activity/quiz/puzzle runners so they register their renderers
 import './activities/quizRunner.js';
 import './activities/puzzleRunner.js';
 
-// Initialize
-document.addEventListener('DOMContentLoaded', () => {
+function initCourse() {
   renderSidebar();
   setupModalClose();
 
@@ -66,4 +66,15 @@ document.addEventListener('DOMContentLoaded', () => {
     const result = await renderSection(sectionId, contentArea);
     renderSectionNav(sectionId, result);
   });
+}
+
+// Initialize
+document.addEventListener('DOMContentLoaded', () => {
+  if (getStudentName()) {
+    // Returning student — go straight to course
+    initCourse();
+  } else {
+    // First visit — ask for name
+    showNameEntry(() => initCourse());
+  }
 });

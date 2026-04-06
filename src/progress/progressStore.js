@@ -1,7 +1,10 @@
 /**
  * localStorage-based progress persistence.
  * Tracks section completion, quiz scores, and puzzle stars.
+ * Sends events to Google Sheets via tracker.
  */
+
+import { trackEvent } from './tracker.js';
 
 const STORAGE_KEY = 'cm_course_progress';
 
@@ -22,6 +25,7 @@ export function markSectionComplete(sectionId) {
   if (!data.sections[sectionId]?.completed) {
     data.sections[sectionId] = { completed: true, completedAt: new Date().toISOString() };
     save(data);
+    trackEvent('section_complete', { sectionId });
   }
 }
 
@@ -34,6 +38,7 @@ export function saveQuizScore(quizId, score, total) {
   const data = load();
   data.quizScores[quizId] = { score, total, attempts: (data.quizScores[quizId]?.attempts || 0) + 1 };
   save(data);
+  trackEvent('quiz_complete', { quizId, score, total });
 }
 
 export function getQuizScore(quizId) {
@@ -66,6 +71,7 @@ export function savePuzzleStars(sectionId, puzzleIndex, stars) {
   if (stars > existing) {
     data.puzzleStars[sectionId][puzzleIndex] = stars;
     save(data);
+    trackEvent('puzzle_complete', { sectionId, puzzleIndex, stars });
   }
 }
 

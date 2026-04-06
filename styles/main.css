@@ -525,3 +525,82 @@ img, svg {
     font-size: 0.85rem;
   }
 }
+
+/* --- Name Entry Modal --- */
+
+.name-entry-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(11, 21, 32, 0.92);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  padding: 24px;
+}
+
+.name-entry-box {
+  background: var(--course-card-bg);
+  border-radius: var(--radius);
+  padding: 40px 36px;
+  max-width: 420px;
+  width: 100%;
+  text-align: center;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+}
+
+.name-entry-logo {
+  margin-bottom: 16px;
+}
+
+.name-entry-box h2 {
+  color: var(--cal-dark);
+  margin-bottom: 8px;
+  font-size: 1.5rem;
+}
+
+.name-entry-box p {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  margin-bottom: 24px;
+}
+
+.name-entry-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.name-entry-input {
+  padding: 14px 18px;
+  border: 2px solid #e2e8f0;
+  border-radius: var(--radius-sm);
+  font-family: inherit;
+  font-size: 1.05rem;
+  text-align: center;
+  transition: border-color 0.2s;
+}
+
+.name-entry-input:focus {
+  outline: none;
+  border-color: var(--course-primary);
+}
+
+.name-entry-btn {
+  padding: 14px 24px;
+  background: var(--course-gradient);
+  color: white;
+  border: none;
+  border-radius: var(--radius-sm);
+  font-family: inherit;
+  font-size: 1.1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+.name-entry-btn:hover {
+  opacity: 0.9;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(34, 146, 191, 0.3);
+}
