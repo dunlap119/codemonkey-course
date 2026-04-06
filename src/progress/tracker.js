@@ -4,7 +4,7 @@
  */
 
 // Paste your Google Apps Script Web App URL here:
-const SCRIPT_URL = '';
+const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbyzhcLfc7voVYyCTC3gkE9hkpkEsC8o25OzrUbvrGorwQ14jtO2-YggX7BQKpg5CJC6/exec';
 
 import { getStudentName } from '../ui/nameEntry.js';
 
