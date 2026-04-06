@@ -119,6 +119,10 @@
 .puzzle-star-display .star-filled { color: #ffd700; }
 .puzzle-star-display .star-empty { color: #444; }
 
+/* Global star colors (used in success panel too) */
+.star-filled { color: #ffd700; }
+.star-empty { color: #555; }
+
 /* Editor pane */
 
 .puzzle-editor-pane {

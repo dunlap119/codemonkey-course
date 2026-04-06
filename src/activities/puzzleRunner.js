@@ -273,17 +273,30 @@ function renderPuzzleSection(sectionData, lesson, containerEl) {
         'Perfect! Couldn\'t be shorter!',
       ];
 
+      // Auto-complete section when all puzzles are done
+      const allDone = completedPuzzles.size >= totalPuzzles;
+      if (allDone) {
+        markSectionComplete(sectionData.id);
+        window.dispatchEvent(new CustomEvent('section-completed', { detail: sectionData.id }));
+      }
+
+      // Build star HTML for the success panel
+      let starHtml = '';
+      for (let s = 0; s < 3; s++) {
+        starHtml += s < stars
+          ? '<span class="star-filled">★</span>'
+          : '<span class="star-empty">★</span>';
+      }
+
       successPanel.innerHTML = `
         <h3>Great Job!</h3>
-        <div class="stars">${starDisplay.innerHTML}</div>
+        <div class="stars">${starHtml}</div>
         <p>${messages[Math.min(stars, 3) - 1]}</p>
         <div class="puzzle-success-btns">
           ${stars < 3 ? '<button class="puzzle-btn-secondary" data-action="retry">Retry for 3 Stars</button>' : ''}
           ${idx < totalPuzzles - 1
             ? '<button class="puzzle-btn-run" data-action="next">Next Puzzle →</button>'
-            : completedPuzzles.size >= totalPuzzles
-            ? '<button class="puzzle-btn-run" data-action="complete">All Puzzles Complete! ✓</button>'
-            : '<button class="puzzle-btn-run" data-action="complete">Continue →</button>'
+            : ''
           }
         </div>
       `;
@@ -296,11 +309,6 @@ function renderPuzzleSection(sectionData, lesson, containerEl) {
             resetPuzzle();
           } else if (action === 'next') {
             renderPuzzle(idx + 1);
-          } else if (action === 'complete') {
-            if (completedPuzzles.size >= totalPuzzles) {
-              markSectionComplete(sectionData.id);
-              window.dispatchEvent(new CustomEvent('section-completed', { detail: sectionData.id }));
-            }
           }
         });
       });
