@@ -1,0 +1,884 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Answer Key - CoffeeScript Coding Adventure</title>
+<style>
+  body { font-family: 'Google Sans', Arial, sans-serif; max-width: 800px; margin: 40px auto; padding: 0 20px; color: #333; line-height: 1.6; }
+  h1 { color: #1a73e8; border-bottom: 3px solid #1a73e8; padding-bottom: 8px; }
+  h2 { color: #e8710a; margin-top: 36px; border-bottom: 2px solid #e8710a; padding-bottom: 4px; }
+  h3 { color: #1a73e8; margin-top: 20px; }
+  .puzzle { margin-bottom: 28px; padding: 16px; background: #f8f9fa; border-radius: 8px; border-left: 4px solid #1a73e8; page-break-inside: avoid; }
+  .puzzle-title { font-weight: bold; font-size: 1.1em; color: #202124; }
+  .concept { color: #5f6368; font-style: italic; font-size: 0.9em; }
+  .star-label { font-weight: bold; margin-top: 10px; }
+  .star-1 { color: #ea4335; }
+  .star-2 { color: #e8710a; }
+  .star-3 { color: #34a853; }
+  pre { background: #202124; color: #e8eaed; padding: 10px 14px; border-radius: 6px; font-family: 'Courier New', monospace; font-size: 13px; white-space: pre; overflow-x: auto; margin: 4px 0 8px 0; }
+  .quiz { margin-bottom: 20px; padding: 16px; background: #e8f0fe; border-radius: 8px; border-left: 4px solid #4285f4; page-break-inside: avoid; }
+  .quiz-title { font-weight: bold; font-size: 1.05em; color: #1a73e8; margin-bottom: 8px; }
+  .quiz q { display: block; margin-bottom: 4px; color: #202124; font-style: normal; quotes: none; }
+  .answer { color: #34a853; font-weight: bold; }
+  .note { color: #5f6368; font-size: 0.85em; margin-top: 4px; }
+  .toc { background: #f8f9fa; padding: 20px; border-radius: 8px; margin-bottom: 30px; }
+  .toc a { color: #1a73e8; text-decoration: none; }
+  .toc a:hover { text-decoration: underline; }
+  .toc ul { columns: 2; list-style: none; padding: 0; }
+  .toc li { padding: 3px 0; }
+  .part-header { background: #1a73e8; color: white; padding: 12px 20px; border-radius: 8px; margin-top: 40px; font-size: 1.3em; font-weight: bold; }
+  @media print { .puzzle, .quiz { page-break-inside: avoid; } }
+</style>
+</head>
+<body>
+
+<h1>CoffeeScript Coding Adventure &mdash; Complete Answer Key</h1>
+<p><em>Solutions for all 61 puzzles and quiz answers for all 22 lessons.<br>Star ratings are based on number of non-empty, non-comment lines of code.</em></p>
+
+<div class="toc">
+<strong>Table of Contents</strong>
+<ul>
+<li><a href="#L1">L1: First Steps</a></li>
+<li><a href="#L2">L2: Turning</a></li>
+<li><a href="#L3">L3: Smart Navigation</a></li>
+<li><a href="#L4">L4: Obstacles &amp; Mazes</a></li>
+<li><a href="#L5">L5: Loops</a></li>
+<li><a href="#L6">L6: Functions</a></li>
+<li><a href="#L7">L7: Function Farm</a></li>
+<li><a href="#L8">L8: Fun-ctions!</a></li>
+<li><a href="#L9">L9: Fake It 'Til You Make It</a></li>
+<li><a href="#L10">L10: Until It's Over</a></li>
+<li><a href="#L11">L11: Cut to the Chase</a></li>
+<li><a href="#L12">L12: Wait for It...</a></li>
+<li><a href="#L13">L13: Act the Goat</a></li>
+<li><a href="#L14">L14: Green Banana Sorbet</a></li>
+<li><a href="#L15">L15: If All Else Fails</a></li>
+<li><a href="#L16">L16: And in the End</a></li>
+<li><a href="#L17">L17: Take it or Leave it!</a></li>
+<li><a href="#L18">L18: Mix and Match</a></li>
+<li><a href="#L19">L19: Fashion Alert!</a></li>
+<li><a href="#L20">L20: Loops are Fun</a></li>
+<li><a href="#L21">L21: What's the Conditional?</a></li>
+<li><a href="#L22">L22: Stars Party!</a></li>
+</ul>
+</div>
+
+<!-- ============================================================ -->
+<div class="part-header">Part 1: CoffeeScript Basics (Lessons 1&ndash;6, 13 Puzzles)</div>
+<!-- ============================================================ -->
+
+<!-- ============================================= -->
+<h2 id="L1">Lesson 1: First Steps</h2>
+<!-- ============================================= -->
+
+<div class="puzzle">
+  <div class="puzzle-title">Puzzle 1: First Steps</div>
+  <div class="concept">Concept: step N &mdash; Thresholds: 1&#9733;=1, 2&#9733;=1, 3&#9733;=1</div>
+  <div class="star-label star-3">&#9733;&#9733;&#9733; 3 Stars (1 line):</div>
+<pre>step 3</pre>
+  <div class="note">Monkey at (0,0) facing right. Banana at (3,0). Count 3 squares.</div>
+</div>
+
+<div class="puzzle">
+  <div class="puzzle-title">Puzzle 2: A Longer Walk</div>
+  <div class="concept">Concept: counting steps &mdash; Thresholds: 1&#9733;=1, 2&#9733;=1, 3&#9733;=1</div>
+  <div class="star-label star-3">&#9733;&#9733;&#9733; 3 Stars (1 line):</div>
+<pre>step 6</pre>
+  <div class="note">Monkey at (0,0) facing right. Banana at (6,0). Count 6 squares.</div>
+</div>
+
+<div class="quiz">
+  <div class="quiz-title">Lesson 1 Quiz Answers</div>
+  <q>Q1: What does <code>step 5</code> do?</q>
+  <span class="answer">&rarr; Moves the monkey forward 5 squares</span><br><br>
+  <q>Q2: The monkey automatically collects bananas when it steps on them.</q>
+  <span class="answer">&rarr; True</span><br><br>
+  <q>Q3: If the monkey is at position 0 and the banana is at position 4, which code collects the banana?</q>
+  <span class="answer">&rarr; step 4</span>
+</div>
+
+<!-- ============================================= -->
+<h2 id="L2">Lesson 2: Turning</h2>
+<!-- ============================================= -->
+
+<div class="puzzle">
+  <div class="puzzle-title">Puzzle 3: Turn and Step</div>
+  <div class="concept">Concept: turn left/right &mdash; Thresholds: 1&#9733;=4, 2&#9733;=3, 3&#9733;=3</div>
+  <div class="star-label star-1">&#9733; 1 Star (4 lines):</div>
+<pre>step 1
+step 1
+turn right
+step 2</pre>
+  <div class="star-label star-3">&#9733;&#9733;&#9733; 3 Stars (3 lines):</div>
+<pre>step 2
+turn right
+step 2</pre>
+  <div class="note">Monkey at (0,2) facing right. Banana at (2,4). Step right 2, turn right (face down), step 2.</div>
+</div>
+
+<div class="puzzle">
+  <div class="puzzle-title">Puzzle 4: Two Bananas</div>
+  <div class="concept">Concept: sequencing &mdash; Thresholds: 1&#9733;=10, 2&#9733;=8, 3&#9733;=7</div>
+  <div class="star-label star-1">&#9733; 1 Star (8 lines):</div>
+<pre>step 1
+turn left
+step 1
+turn right
+turn right
+step 1
+step 1
+step 1</pre>
+  <div class="star-label star-3">&#9733;&#9733;&#9733; 3 Stars (6 lines):</div>
+<pre>step 1
+turn left
+step 1
+turn right
+turn right
+step 3</pre>
+  <div class="note">Monkey at (0,2) facing right. Bananas at (1,1) and (1,4). Go right 1, turn left (face up), step 1 to get first banana. Turn right twice (face down), step 3 to get second banana.</div>
+</div>
+
+<div class="quiz">
+  <div class="quiz-title">Lesson 2 Quiz Answers</div>
+  <q>Q1: If the monkey is facing right and you use <code>turn right</code>, which direction is it now facing?</q>
+  <span class="answer">&rarr; Down</span><br><br>
+  <q>Q2: <code>turn right</code> moves the monkey forward and to the right.</q>
+  <span class="answer">&rarr; False (turn only rotates, it doesn't move)</span><br><br>
+  <q>Q3: If the monkey is facing up and the banana is to the right, what should you do?</q>
+  <span class="answer">&rarr; turn right, then step</span>
+</div>
+
+<!-- ============================================= -->
+<h2 id="L3">Lesson 3: Smart Navigation</h2>
+<!-- ============================================= -->
+
+<div class="puzzle">
+  <div class="puzzle-title">Puzzle 5: Turn to Banana</div>
+  <div class="concept">Concept: turnTo &mdash; Thresholds: 1&#9733;=3, 2&#9733;=2, 3&#9733;=2</div>
+  <div class="star-label star-3">&#9733;&#9733;&#9733; 3 Stars (2 lines):</div>
+<pre>turnTo banana
+step 6</pre>
+  <div class="note">Monkey at (0,1) facing down. Banana at (6,1). turnTo auto-faces right, then step 6.</div>
+</div>
+
+<div class="puzzle">
+  <div class="puzzle-title">Puzzle 6: Step DistanceTo</div>
+  <div class="concept">Concept: distanceTo &mdash; Thresholds: 1&#9733;=2, 2&#9733;=1, 3&#9733;=1</div>
+  <div class="star-label star-3">&#9733;&#9733;&#9733; 3 Stars (1 line):</div>
+<pre>step distanceTo banana</pre>
+  <div class="note">Monkey at (0,1) facing right. Banana at (5,1). distanceTo calculates the distance automatically.</div>
+</div>
+
+<div class="puzzle">
+  <div class="puzzle-title">Puzzle 7: Turn To + Distance To</div>
+  <div class="concept">Concept: arrays &mdash; Thresholds: 1&#9733;=8, 2&#9733;=6, 3&#9733;=6</div>
+  <div class="star-label star-1">&#9733; 1 Star (8 lines):</div>
+<pre>turnTo bananas[0]
+step distanceTo bananas[0]
+turn right
+step 1
+turn right
+step 1
+turn left
+step distanceTo bananas[1]</pre>
+  <div class="star-label star-3">&#9733;&#9733;&#9733; 3 Stars (4 lines):</div>
+<pre>turnTo bananas[0]
+step distanceTo bananas[0]
+turnTo bananas[1]
+step distanceTo bananas[1]</pre>
+  <div class="note">Monkey at (0,2). Bananas at (4,2) and (4,5). Use turnTo + step distanceTo for each.</div>
+</div>
+
+<div class="quiz">
+  <div class="quiz-title">Lesson 3 Quiz Answers</div>
+  <q>Q1: What does <code>turnTo banana</code> do?</q>
+  <span class="answer">&rarr; Makes the monkey face toward the banana</span><br><br>
+  <q>Q2: How do you refer to the second banana?</q>
+  <span class="answer">&rarr; bananas[1]</span><br><br>
+  <q>Q3: <code>step distanceTo banana</code> always moves exactly to the banana.</q>
+  <span class="answer">&rarr; True</span>
+</div>
+
+<!-- ============================================= -->
+<h2 id="L4">Lesson 4: Obstacles &amp; Mazes</h2>
+<!-- ============================================= -->
+
+<div class="puzzle">
+  <div class="puzzle-title">Puzzle 8: Watch Out for Bushes!</div>
+  <div class="concept">Concept: obstacles &mdash; Thresholds: 1&#9733;=10, 2&#9733;=8, 3&#9733;=7</div>
+  <div class="star-label star-1">&#9733; 1 Star (8 lines):</div>
+<pre>step 2
+turn right
+step 2
+turn left
+step 3
+turn left
+step 2
+step 1</pre>
+  <div class="star-label star-3">&#9733;&#9733;&#9733; 3 Stars (7 lines):</div>
+<pre>step 2
+turn right
+step 2
+turn left
+step 3
+turn left
+step 2</pre>
+  <div class="note">Monkey at (0,1) facing right. Banana at (5,1). Bush wall at x=3, y=0-2. Go around: right 2, down 2, right 3, up 2.</div>
+</div>
+
+<div class="puzzle">
+  <div class="puzzle-title">Puzzle 12: Maze Runner</div>
+  <div class="concept">Concept: path planning &mdash; Thresholds: 1&#9733;=14, 2&#9733;=12, 3&#9733;=10</div>
+  <div class="star-label star-1">&#9733; 1 Star (12 lines):</div>
+<pre>step 1
+turn right
+step 3
+turn left
+step 1
+turn right
+step 1
+turn left
+step 2
+turn right
+step 2
+step 1</pre>
+  <div class="star-label star-3">&#9733;&#9733;&#9733; 3 Stars (10 lines):</div>
+<pre>step 1
+turn right
+step 3
+turn left
+step 1
+turn right
+step 1
+turn left
+step 2
+turn right
+step 3</pre>
+  <div class="note">Monkey at (0,0). Banana at (6,6). Navigate around bush walls. Multiple valid paths exist.</div>
+</div>
+
+<div class="quiz">
+  <div class="quiz-title">Lesson 4 Quiz Answers</div>
+  <q>Q1: The monkey can walk through bushes if you use <code>step</code> with a large enough number.</q>
+  <span class="answer">&rarr; False (the monkey crashes into bushes)</span><br><br>
+  <q>Q2: What is the first thing you should do when you see obstacles?</q>
+  <span class="answer">&rarr; Plan your path before writing code</span><br><br>
+  <q>Q3: What is decomposition?</q>
+  <span class="answer">&rarr; Breaking a big problem into smaller steps</span>
+</div>
+
+<!-- ============================================= -->
+<h2 id="L5">Lesson 5: Loops</h2>
+<!-- ============================================= -->
+
+<div class="puzzle">
+  <div class="puzzle-title">Puzzle 9: Loop the Loop</div>
+  <div class="concept">Concept: for loops &mdash; Thresholds: 1&#9733;=4, 2&#9733;=3, 3&#9733;=3</div>
+  <div class="star-label star-1">&#9733; 1 Star (4 lines):</div>
+<pre>step 1
+step 1
+step 1
+step 1</pre>
+  <div class="star-label star-3">&#9733;&#9733;&#9733; 3 Stars (2 lines):</div>
+<pre>for i in [1..4]
+  step 1</pre>
+  <div class="note">4 bananas in a row at x=1,2,3,4. The loop steps 1 four times.</div>
+</div>
+
+<div class="puzzle">
+  <div class="puzzle-title">Puzzle 10: Staircase</div>
+  <div class="concept">Concept: loop patterns &mdash; Thresholds: 1&#9733;=7, 2&#9733;=6, 3&#9733;=5</div>
+  <div class="star-label star-1">&#9733; 1 Star (6 lines):</div>
+<pre>step 1
+turn right
+step 1
+turn left
+step 1
+turn right
+step 1
+turn left
+step 1
+turn right
+step 1</pre>
+  <div class="star-label star-3">&#9733;&#9733;&#9733; 3 Stars (4 lines):</div>
+<pre>for i in [1..3]
+  step 1
+  turn right
+  step 1
+  turn left</pre>
+  <div class="note">Bananas at diagonal (1,1), (2,2), (3,3). Pattern: step 1, turn right, step 1, turn left &mdash; repeated 3 times.</div>
+</div>
+
+<div class="puzzle">
+  <div class="puzzle-title">Puzzle 11: Loop with turnTo</div>
+  <div class="concept">Concept: for..in arrays &mdash; Thresholds: 1&#9733;=5, 2&#9733;=4, 3&#9733;=4</div>
+  <div class="star-label star-1">&#9733; 1 Star (5+ lines):</div>
+<pre>turnTo bananas[0]
+step distanceTo bananas[0]
+turnTo bananas[1]
+step distanceTo bananas[1]
+turnTo bananas[2]
+step distanceTo bananas[2]
+turnTo bananas[3]
+step distanceTo bananas[3]</pre>
+  <div class="star-label star-3">&#9733;&#9733;&#9733; 3 Stars (3 lines):</div>
+<pre>for b in bananas
+  turnTo b
+  step distanceTo b</pre>
+  <div class="note">Monkey at center (4,0). 4 bananas scattered along the row. for..in visits each one.</div>
+</div>
+
+<div class="quiz">
+  <div class="quiz-title">Lesson 5 Quiz Answers</div>
+  <q>Q1: How many times does the indented code run in <code>for i in [1..6]</code>?</q>
+  <span class="answer">&rarr; 6 times</span><br><br>
+  <q>Q2: In CoffeeScript, indentation inside a loop is required.</q>
+  <span class="answer">&rarr; True</span><br><br>
+  <q>Q3: What does <code>for b in bananas</code> do?</q>
+  <span class="answer">&rarr; Goes through each banana one at a time</span>
+</div>
+
+<!-- ============================================= -->
+<h2 id="L6">Lesson 6: Functions</h2>
+<!-- ============================================= -->
+
+<div class="puzzle">
+  <div class="puzzle-title">Puzzle 13: Function Junction</div>
+  <div class="concept">Concept: functions &mdash; Thresholds: 1&#9733;=6, 2&#9733;=5, 3&#9733;=4</div>
+  <div class="star-label star-1">&#9733; 1 Star (6 lines):</div>
+<pre>step 2
+step 2
+step 2</pre>
+  <div class="star-label star-2">&#9733;&#9733; 2 Stars (5 lines):</div>
+<pre>goGet = () ->
+  step 2
+goGet()
+goGet()
+goGet()</pre>
+  <div class="star-label star-3">&#9733;&#9733;&#9733; 3 Stars (4 lines):</div>
+<pre>goGet = () ->
+  step 2
+for i in [1..3]
+  goGet()</pre>
+  <div class="note">3 bananas spaced 2 apart at x=2,4,6. Define goGet, call it in a loop.</div>
+</div>
+
+<div class="quiz">
+  <div class="quiz-title">Lesson 6 Quiz Answers</div>
+  <q>Q1: Which line correctly defines a function called <code>jump</code>?</q>
+  <span class="answer">&rarr; jump = () -&gt;</span><br><br>
+  <q>Q2: If you call a function before defining it, the code will still work.</q>
+  <span class="answer">&rarr; False</span><br><br>
+  <q>Q3: What does calling <code>goGet()</code> do?</q>
+  <span class="answer">&rarr; Runs the code inside the goGet function</span>
+</div>
+
+<!-- ============================================================ -->
+<div class="part-header">Part 2: Functions &amp; Beyond (Lessons 7&ndash;22, 48 Puzzles)</div>
+<!-- ============================================================ -->
+
+<!-- ============================================= -->
+<h2 id="L7">Lesson 7: Function Farm</h2>
+<!-- ============================================= -->
+
+<div class="puzzle">
+  <div class="puzzle-title">Puzzle 1: Pick and Place</div>
+  <div class="concept">Concept: grab() / drop() &mdash; Thresholds: 1&#9733;=5, 2&#9733;=4, 3&#9733;=4</div>
+  <div class="star-label star-3">&#9733;&#9733;&#9733; 3 Stars (4 lines):</div>
+<pre>step 3
+grab()
+step 3
+drop()</pre>
+</div>
+
+<div class="puzzle">
+  <div class="puzzle-title">Puzzle 2: Two Deliveries</div>
+  <div class="concept">Concept: defining functions &mdash; Thresholds: 1&#9733;=8, 2&#9733;=6, 3&#9733;=4</div>
+  <div class="star-label star-2">&#9733;&#9733; 2 Stars (5 lines):</div>
+<pre>for i in [1..2]
+  step 2
+  grab()
+  step 2
+  drop()</pre>
+</div>
+
+<div class="puzzle">
+  <div class="puzzle-title">Puzzle 3: Goto Function</div>
+  <div class="concept">Concept: function parameters &mdash; Thresholds: 1&#9733;=10, 2&#9733;=8, 3&#9733;=5</div>
+  <div class="star-label star-3">&#9733;&#9733;&#9733; 3 Stars (5 lines):</div>
+<pre>goto = (a) ->
+  turnTo a
+  step distanceTo a
+for b in bananas
+  goto b</pre>
+</div>
+
+<div class="quiz">
+  <div class="quiz-title">Lesson 7 Quiz Answers</div>
+  <q>Q1: What does grab() do?</q>
+  <span class="answer">&rarr; Picks up the item you're standing on</span><br><br>
+  <q>Q2: How do you define a function called "fetch" with parameter "x"?</q>
+  <span class="answer">&rarr; fetch = (x) -&gt;</span><br><br>
+  <q>Q3: A function definition runs immediately when the code starts.</q>
+  <span class="answer">&rarr; False</span>
+</div>
+
+<!-- ============================================= -->
+<h2 id="L8">Lesson 8: Fun-ctions!</h2>
+<!-- ============================================= -->
+
+<div class="puzzle">
+  <div class="puzzle-title">Puzzle 4: Backtrack</div>
+  <div class="concept">Concept: step -x &mdash; Thresholds: 1&#9733;=3, 2&#9733;=2, 3&#9733;=2</div>
+  <div class="star-label star-3">&#9733;&#9733;&#9733; 3 Stars (2 lines):</div>
+<pre>step 2
+step -4</pre>
+</div>
+
+<div class="puzzle">
+  <div class="puzzle-title">Puzzle 5: Debug This!</div>
+  <div class="concept">Concept: debugging &mdash; Thresholds: 1&#9733;=4, 2&#9733;=3, 3&#9733;=3</div>
+  <div class="star-label star-3">&#9733;&#9733;&#9733; 3 Stars (3 lines):</div>
+<pre>step 4
+turn right
+step 4</pre>
+</div>
+
+<div class="puzzle">
+  <div class="puzzle-title">Puzzle 6: Loop Function</div>
+  <div class="concept">Concept: for loop + function &mdash; Thresholds: 1&#9733;=5, 2&#9733;=4, 3&#9733;=3</div>
+  <div class="star-label star-3">&#9733;&#9733;&#9733; 3 Stars (3 lines):</div>
+<pre>for i in [1..4]
+  step 2</pre>
+</div>
+
+<div class="quiz">
+  <div class="quiz-title">Lesson 8 Quiz Answers</div>
+  <q>Q1: What does step -3 do?</q>
+  <span class="answer">&rarr; Moves the monkey backward 3 squares</span><br><br>
+  <q>Q2: What is debugging?</q>
+  <span class="answer">&rarr; Finding and fixing mistakes in code</span>
+</div>
+
+<!-- ============================================= -->
+<h2 id="L9">Lesson 9: Fake It 'Til You Make It</h2>
+<!-- ============================================= -->
+
+<div class="puzzle">
+  <div class="puzzle-title">Puzzle 7: Function Chain</div>
+  <div class="concept">Concept: functions calling functions &mdash; 3&#9733; (3 lines):</div>
+<pre>turnTo banana
+step distanceTo banana</pre>
+</div>
+
+<div class="puzzle">
+  <div class="puzzle-title">Puzzle 8: Zigzag Builder</div>
+  <div class="concept">Concept: pattern functions &mdash; 3&#9733; (4 lines):</div>
+<pre>for i in [1..3]
+  step 2
+  turn right
+  step 2
+  turn left</pre>
+</div>
+
+<div class="puzzle">
+  <div class="puzzle-title">Puzzle 9: Collect All</div>
+  <div class="concept">Concept: call stack &mdash; 3&#9733; (4 lines):</div>
+<pre>for b in bananas
+  turnTo b
+  step distanceTo b</pre>
+</div>
+
+<div class="quiz">
+  <div class="quiz-title">Lesson 9 Quiz Answers</div>
+  <q>Q1: What is a call stack?</q>
+  <span class="answer">&rarr; A chain of functions calling each other</span><br><br>
+  <q>Q2: A function can only call built-in functions like step and turn.</q>
+  <span class="answer">&rarr; False</span>
+</div>
+
+<!-- ============================================= -->
+<h2 id="L10">Lesson 10: It Ain't Over Until It's Over</h2>
+<!-- ============================================= -->
+
+<div class="puzzle">
+  <div class="puzzle-title">Puzzle 10: Walk Until Near</div>
+  <div class="star-label star-3">&#9733;&#9733;&#9733; 3 Stars (2 lines):</div>
+<pre>until near banana
+  step 1</pre>
+</div>
+
+<div class="puzzle">
+  <div class="puzzle-title">Puzzle 11: Unknown Distance</div>
+  <div class="star-label star-3">&#9733;&#9733;&#9733; 3 Stars (3 lines):</div>
+<pre>turnTo banana
+until near banana
+  step 1</pre>
+</div>
+
+<div class="puzzle">
+  <div class="puzzle-title">Puzzle 12: Two Until Loops</div>
+  <div class="star-label star-3">&#9733;&#9733;&#9733; 3 Stars (6 lines):</div>
+<pre>turnTo bananas[0]
+until near bananas[0]
+  step 1
+turnTo bananas[1]
+until near bananas[1]
+  step 1</pre>
+</div>
+
+<div class="quiz">
+  <div class="quiz-title">Lesson 10 Quiz Answers</div>
+  <q>Q1: What does near(banana) return?</q>
+  <span class="answer">&rarr; true if on the banana, false otherwise</span><br><br>
+  <q>Q2: What happens if an until loop's condition is never true?</q>
+  <span class="answer">&rarr; It runs forever (infinite loop)</span>
+</div>
+
+<!-- ============================================= -->
+<h2 id="L11">Lesson 11: Cut to the Chase</h2>
+<!-- ============================================= -->
+
+<div class="puzzle">
+  <div class="puzzle-title">Puzzles 13&ndash;15: Chase puzzles</div>
+  <div class="star-label star-3">&#9733;&#9733;&#9733; 3 Stars (best solution for all 3):</div>
+<pre>for b in bananas
+  turnTo b
+  step distanceTo b</pre>
+</div>
+
+<div class="quiz">
+  <div class="quiz-title">Lesson 11 Quiz Answers</div>
+  <q>Q1: Which is more runtime-efficient for reaching a banana?</q>
+  <span class="answer">&rarr; step distanceTo b</span><br><br>
+  <q>Q2: The chase function can be used for any target.</q>
+  <span class="answer">&rarr; True</span>
+</div>
+
+<!-- ============================================= -->
+<h2 id="L12">Lesson 12: Wait for It...</h2>
+<!-- ============================================= -->
+
+<div class="puzzle">
+  <div class="puzzle-title">Puzzle 16: Sleeping Cat</div>
+  <div class="star-label star-3">&#9733;&#9733;&#9733; 3 Stars:</div>
+<pre>until not cat.sleeping()
+  wait()
+step 7</pre>
+</div>
+
+<div class="puzzle">
+  <div class="puzzle-title">Puzzle 17: Patient Monkey</div>
+  <div class="star-label star-3">&#9733;&#9733;&#9733; 3 Stars:</div>
+<pre>step 2
+until not cat.sleeping()
+  wait()
+step 5</pre>
+</div>
+
+<div class="puzzle">
+  <div class="puzzle-title">Puzzle 18: Two Cats</div>
+  <div class="star-label star-3">&#9733;&#9733;&#9733; 3 Stars:</div>
+<pre>wait()
+wait()
+step 3
+wait()
+step 6</pre>
+</div>
+
+<div class="quiz">
+  <div class="quiz-title">Lesson 12 Quiz Answers</div>
+  <q>Q1: What does wait() do?</q>
+  <span class="answer">&rarr; Lets time pass by one tick</span><br><br>
+  <q>Q2: cat.sleeping() returns true forever.</q>
+  <span class="answer">&rarr; False</span>
+</div>
+
+<!-- ============================================= -->
+<h2 id="L13">Lesson 13: Act the Goat</h2>
+<!-- ============================================= -->
+
+<div class="puzzle">
+  <div class="puzzle-title">Puzzle 19: Ice Breaker</div>
+  <div class="star-label star-3">&#9733;&#9733;&#9733; 3 Stars:</div>
+<pre>goat.goto banana
+goat.hit banana
+step 5</pre>
+</div>
+
+<div class="puzzle">
+  <div class="puzzle-title">Puzzles 20&ndash;21: If Frozen + Goat Helper</div>
+  <div class="star-label star-3">&#9733;&#9733;&#9733; 3 Stars (6 lines):</div>
+<pre>for b in bananas
+  if b.frozen()
+    goat.goto b
+    goat.hit b
+  turnTo b
+  step distanceTo b</pre>
+</div>
+
+<div class="quiz">
+  <div class="quiz-title">Lesson 13 Quiz Answers</div>
+  <q>Q1: What does goat.hit(banana) do?</q>
+  <span class="answer">&rarr; Breaks the ice on a frozen banana</span><br><br>
+  <q>Q2: When does code inside an if statement run?</q>
+  <span class="answer">&rarr; Only when the condition is true</span>
+</div>
+
+<!-- ============================================= -->
+<h2 id="L14">Lesson 14: Green Banana Sorbet</h2>
+<!-- ============================================= -->
+
+<div class="puzzle">
+  <div class="puzzle-title">Puzzles 22&ndash;24: Green/Frozen banana puzzles</div>
+  <div class="star-label star-3">&#9733;&#9733;&#9733; 3 Stars (6 lines):</div>
+<pre>for b in bananas
+  if b.frozen()
+    goat.goto b
+    goat.hit b
+  turnTo b
+  step distanceTo b</pre>
+  <div class="note">Green bananas are auto-skipped. Frozen ones need the goat first.</div>
+</div>
+
+<div class="quiz">
+  <div class="quiz-title">Lesson 14 Quiz Answers</div>
+  <q>Q1: What does the else part of if-else do?</q>
+  <span class="answer">&rarr; Runs when the condition is false</span><br><br>
+  <q>Q2: banana.green() returns true for ripe yellow bananas.</q>
+  <span class="answer">&rarr; False</span>
+</div>
+
+<!-- ============================================= -->
+<h2 id="L15">Lesson 15: If All Else Fails</h2>
+<!-- ============================================= -->
+
+<div class="puzzle">
+  <div class="puzzle-title">Puzzles 25&ndash;27: Advanced conditionals</div>
+  <div class="star-label star-3">&#9733;&#9733;&#9733; 3 Stars (best: 8 lines with function):</div>
+<pre>handle = (b) ->
+  if b.frozen()
+    goat.goto b
+    goat.hit b
+  turnTo b
+  step distanceTo b
+for b in bananas
+  handle b</pre>
+</div>
+
+<div class="quiz">
+  <div class="quiz-title">Lesson 15 Quiz Answers</div>
+  <q>Q1: What happens with two if statements in a row?</q>
+  <span class="answer">&rarr; Both are checked independently</span><br><br>
+  <q>Q2: if-else is better when conditions are opposites.</q>
+  <span class="answer">&rarr; True</span>
+</div>
+
+<!-- ============================================= -->
+<h2 id="L16">Lesson 16: And in the End</h2>
+<!-- ============================================= -->
+
+<div class="puzzle">
+  <div class="puzzle-title">Puzzles 28&ndash;30: AND operator puzzles</div>
+  <div class="note">Same frozen+collect pattern. Use <code>and</code> to combine conditions.</div>
+  <div class="star-label star-3">&#9733;&#9733;&#9733; 3 Stars (best: 8 lines with function):</div>
+<pre>process = (b) ->
+  if b.frozen()
+    goat.goto b
+    goat.hit b
+  turnTo b
+  step distanceTo b
+for b in bananas
+  process b</pre>
+</div>
+
+<div class="quiz">
+  <div class="quiz-title">Lesson 16 Quiz Answers</div>
+  <q>Q1: When is "A and B" true?</q>
+  <span class="answer">&rarr; When BOTH A and B are true</span><br><br>
+  <q>Q2: "not frozen() and not green()" means banana is safe to eat.</q>
+  <span class="answer">&rarr; True</span>
+</div>
+
+<!-- ============================================= -->
+<h2 id="L17">Lesson 17: Take it or Leave it!</h2>
+<!-- ============================================= -->
+
+<div class="puzzle">
+  <div class="puzzle-title">Puzzles 31&ndash;33: OR operator puzzles</div>
+  <div class="star-label star-3">&#9733;&#9733;&#9733; 3 Stars (best: 8 lines with function):</div>
+<pre>process = (b) ->
+  if b.frozen()
+    goat.goto b
+    goat.hit b
+  turnTo b
+  step distanceTo b
+for b in bananas
+  process b</pre>
+</div>
+
+<div class="quiz">
+  <div class="quiz-title">Lesson 17 Quiz Answers</div>
+  <q>Q1: When is "A or B" true?</q>
+  <span class="answer">&rarr; When at least one is true</span><br><br>
+  <q>Q2: "not (A or B)" is the same as:</q>
+  <span class="answer">&rarr; not A and not B (De Morgan's Law)</span>
+</div>
+
+<!-- ============================================= -->
+<h2 id="L18">Lesson 18: Mix and Match</h2>
+<!-- ============================================= -->
+
+<div class="puzzle">
+  <div class="puzzle-title">Puzzle 34: Make a List</div>
+  <div class="star-label star-3">&#9733;&#9733;&#9733; 3 Stars:</div>
+<pre>targets = [bananas[0], turtle, bananas[1]]
+for t in targets
+  turnTo t
+  step distanceTo t</pre>
+</div>
+
+<div class="puzzle">
+  <div class="puzzle-title">Puzzle 36: Custom Route</div>
+  <div class="star-label star-3">&#9733;&#9733;&#9733; 3 Stars:</div>
+<pre>chase = (b) ->
+  turnTo b
+  until near b
+    step 1
+route = [bananas[3], bananas[0], bananas[1], bananas[2]]
+for b in route
+  chase b</pre>
+</div>
+
+<div class="quiz">
+  <div class="quiz-title">Lesson 18 Quiz Answers</div>
+  <q>Q1: What does [banana, turtle] create?</q>
+  <span class="answer">&rarr; An array with two elements</span><br><br>
+  <q>Q2: An array can contain different types of objects.</q>
+  <span class="answer">&rarr; True</span>
+</div>
+
+<!-- ============================================= -->
+<h2 id="L19">Lesson 19: Fashion Alert!</h2>
+<!-- ============================================= -->
+
+<div class="puzzle">
+  <div class="puzzle-title">Puzzles 37&ndash;39: Penguin property puzzles</div>
+  <div class="note">Use <code>p.hasGlasses()</code> and <code>p.hasBowTie()</code> with <code>and</code>/<code>or</code> to filter penguins.</div>
+  <div class="star-label star-3">&#9733;&#9733;&#9733; 3 Stars (example &mdash; Puzzle 38):</div>
+<pre>for p in penguins
+  if p.hasGlasses() and p.hasBowTie()
+    turnTo p
+    step distanceTo p
+    turn left
+    step 2
+    turn right
+turnTo bananas[3]
+step distanceTo bananas[3]</pre>
+</div>
+
+<div class="quiz">
+  <div class="quiz-title">Lesson 19 Quiz Answers</div>
+  <q>Q1: hasGlasses() and hasBowTie() is true when:</q>
+  <span class="answer">&rarr; Penguin has BOTH accessories</span><br><br>
+  <q>Q2: hasGlasses() or hasBowTie() is true when:</q>
+  <span class="answer">&rarr; Penguin has at least one accessory</span>
+</div>
+
+<!-- ============================================= -->
+<h2 id="L20">Lesson 20: Loops are Fun</h2>
+<!-- ============================================= -->
+
+<div class="puzzle">
+  <div class="puzzle-title">Puzzle 40: Loop Review: For</div>
+  <div class="star-label star-3">&#9733;&#9733;&#9733; 3 Stars (1 line):</div>
+<pre>step 8</pre>
+</div>
+
+<div class="puzzle">
+  <div class="puzzle-title">Puzzle 42: Loop Review: For-In</div>
+  <div class="star-label star-3">&#9733;&#9733;&#9733; 3 Stars:</div>
+<pre>for b in bananas
+  turnTo b
+  step distanceTo b</pre>
+</div>
+
+<div class="quiz">
+  <div class="quiz-title">Lesson 20 Quiz Answers</div>
+  <q>Q1: Best loop when you don't know the distance?</q>
+  <span class="answer">&rarr; until near target</span><br><br>
+  <q>Q2: Best loop for visiting every item in a collection?</q>
+  <span class="answer">&rarr; for b in bananas</span>
+</div>
+
+<!-- ============================================= -->
+<h2 id="L21">Lesson 21: What's the Conditional?</h2>
+<!-- ============================================= -->
+
+<div class="puzzle">
+  <div class="puzzle-title">Puzzles 43&ndash;45: Conditional review</div>
+  <div class="star-label star-3">&#9733;&#9733;&#9733; 3 Stars (best: 8 lines):</div>
+<pre>process = (b) ->
+  if b.frozen()
+    goat.goto b
+    goat.hit b
+  turnTo b
+  step distanceTo b
+for b in bananas
+  process b</pre>
+</div>
+
+<div class="quiz">
+  <div class="quiz-title">Lesson 21 Quiz Answers</div>
+  <q>Q1: Which conditional checks TWO conditions at once?</q>
+  <span class="answer">&rarr; and / or</span><br><br>
+  <q>Q2: You can combine loops, functions, and conditionals.</q>
+  <span class="answer">&rarr; True</span>
+</div>
+
+<!-- ============================================= -->
+<h2 id="L22">Lesson 22: Stars Party!</h2>
+<!-- ============================================= -->
+
+<div class="puzzle">
+  <div class="puzzle-title">Puzzle 46: Speed Run</div>
+  <div class="star-label star-3">&#9733;&#9733;&#9733; 3 Stars (1 line):</div>
+<pre>step 10</pre>
+</div>
+
+<div class="puzzle">
+  <div class="puzzle-title">Puzzle 47: Optimize This</div>
+  <div class="star-label star-3">&#9733;&#9733;&#9733; 3 Stars:</div>
+<pre>for b in bananas
+  turnTo b
+  step distanceTo b</pre>
+</div>
+
+<div class="puzzle">
+  <div class="puzzle-title">Puzzle 48: Grand Finale</div>
+  <div class="star-label star-3">&#9733;&#9733;&#9733; 3 Stars (8 lines):</div>
+<pre>process = (b) ->
+  if b.frozen()
+    goat.goto b
+    goat.hit b
+  turnTo b
+  step distanceTo b
+for b in bananas
+  process b</pre>
+</div>
+
+<div class="quiz">
+  <div class="quiz-title">Lesson 22 Quiz Answers</div>
+  <q>Q1: Best way to make code shorter?</q>
+  <span class="answer">&rarr; Use loops and functions</span><br><br>
+  <q>Q2: Best approach for scattered bananas?</q>
+  <span class="answer">&rarr; for b in bananas with turnTo and step distanceTo</span><br><br>
+  <q>Q3: You completed Coding Adventure Part 2!</q>
+  <span class="answer">&rarr; True!</span>
+</div>
+
+<hr>
+<p style="text-align:center;color:#888;margin-top:40px;"><em>CoffeeScript Coding Adventure &mdash; Complete Answer Key &bull; 61 Puzzles &bull; 22 Lessons &bull; Create a Loop</em></p>
+
+</body>
+</html>
